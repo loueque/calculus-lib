@@ -1,7 +1,11 @@
+#include <iostream>
+#include <strstream>
+
 #include <math.h>
 #include <string>
-#include <map>
+#include <any>
+#include <array>
 
-int main() {
+std::any main() {
 	return 0;
 }
