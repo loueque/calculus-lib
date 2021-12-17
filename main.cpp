@@ -10,6 +10,11 @@
 
 std::vector<std::string> split_string(std::string);
 
+template <typename T>
+T duplicate(T x, T y) {
+	return x, y;
+}
+
 int cubic_equation(int x) {
 	return std::pow(x, 3);
 };
@@ -26,7 +31,3 @@ int sum_series(int n, int i, std::function<int(double)> func) {
 		return func(i);
 	}
 };
-
-int add(int a) {
-	return a+1;
-}
