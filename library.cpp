@@ -52,7 +52,7 @@ int quadratic_formula(int a, int b, int c) {
 	if (a,b,c > 0) {
 		return -b+std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
 	}
-};
+}
 
 int factoral(int start) {
 	long int factoral = start;
@@ -69,7 +69,7 @@ int sum_series(int n, int i, std::function<int(double)> func) {
 	for (start; start<=n; start++) {
 		return func(i);
 	}
-};
+}
 
 double getValueAt(double x, const std::vector<double> &coeffs) {
     double total = 0;
