@@ -8,8 +8,6 @@
 #include <vector>
 #include <functional>
 
-std::vector<std::string> split_string(std::string);
-
 template <typename T>
 T duplicate(T x, T y) {
 	return x, y;
@@ -30,4 +28,25 @@ int sum_series(int n, int i, std::function<int(double)> func) {
 	for (start; start<=n; start++) {
 		return func(i);
 	}
+};
+
+double getValueAt(double x, const std::vector<double> &coeffs) {
+    double total = 0;
+
+    double xToTheI = 1;
+    for (unsigned i = 0; i < coeffs.size(); i++) {
+
+        total += coeffs[i] * xToTheI;
+
+        xToTheI *= x;
+    }
+    return total;
+}
+
+class Calculus {
+	public:
+
+	private:
+
+	protected:
 };
