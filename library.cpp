@@ -1,4 +1,5 @@
-#pragma once
+#if !defined(foo)
+#define foo 1
 
 #include <iostream>
 #include <stdio.h>
@@ -52,3 +53,5 @@ class Calculus {
 
 	protected:
 };
+
+#endif
