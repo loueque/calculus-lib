@@ -16,6 +16,34 @@ T duplicate(T x, T y) {
 	return x, y;
 }
 
+template <typename T>
+T loop_return(T array[6]) {
+	for (int i = 0; i < 6; i++) {
+		std::cout << i + 1 << array[i] << std::endl;
+	}
+}
+
+namespace Funcs {
+	class Functions {
+		public:
+			static double OneDivX(double x) {
+				return 1/x;
+			};
+
+			static double XDivX(double x) {
+				return x/x;
+			}
+
+			static double OneDivXPow(double x) {
+				return 1/std::pow(x, 2);
+			}
+
+			static double XDivTimes2(double x) {
+				return x/x+2;
+			}
+	};
+};
+
 int cubic_equation(int x) {
 	return std::pow(x, 3);
 };
@@ -25,6 +53,16 @@ int quadratic_formula(int a, int b, int c) {
 		return -b+std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
 	}
 };
+
+int factoral(int start) {
+	long int factoral = start;
+	if (start > 1) {
+		for(int i = 1; i <= start; i++) {
+			factoral = start * i;
+		}
+	}
+	return factoral;
+}
 
 int sum_series(int n, int i, std::function<int(double)> func) {
 	int start = i;
