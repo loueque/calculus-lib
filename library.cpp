@@ -17,7 +17,7 @@ T duplicate(T x, T y) {
 }
 
 template <typename T>
-T loop_return(T array[6]) {
+T loop_return_print(T array[6]) {
 	for (int i = 0; i < 6; i++) {
 		std::cout << i + 1 << array[i] << std::endl;
 	}
@@ -44,6 +44,15 @@ namespace Funcs {
 	};
 };
 
+int factors(int n) {
+	std::vector<int> factors = {};
+	for (int i = 1; i <= n; i++) {
+		if(n%1 == 0) {
+			factors.push_back(i);
+		}
+	}
+}
+
 int cubic_equation(int x) {
 	return std::pow(x, 3);
 };
@@ -55,13 +64,14 @@ int quadratic_formula(int a, int b, int c) {
 }
 
 int factoral(int start) {
-	long int factoral = start;
+	int n = start;
+	long double factoral = 1.0;
 	if (start > 1) {
 		for(int i = 1; i <= start; i++) {
 			factoral = start * i;
 		}
 	}
-	return factoral;
+	return n, factoral;
 }
 
 int sum_series(int n, int i, std::function<int(double)> func) {
