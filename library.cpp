@@ -63,7 +63,7 @@ int quadratic_formula(int a, int b, int c) {
 	}
 }
 
-int factoral(int start) {
+int factorial(int start) {
 	int n = start;
 	long double factoral = 1.0;
 	if (start > 1) {
