@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 
 template <typename T>
 T duplicate(T x, T y);
