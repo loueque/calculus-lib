@@ -71,7 +71,7 @@ int factorial(int start) {
 			factoral = start * i;
 		}
 	}
-	return n, factoral;
+	return factoral;
 }
 
 int sum_series(int n, int i, std::function<int(double)> func) {
