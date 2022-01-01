@@ -11,6 +11,4 @@
 #include <vector>
 #include <functional>
 
-
-
 #endif
