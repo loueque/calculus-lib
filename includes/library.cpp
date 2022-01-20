@@ -44,6 +44,11 @@ namespace Funcs {
 	};
 };
 
+template<typename value_t, typename func_t>
+inline value_t integration_func(const value_t a, const value_t b, const value_t t, func_t func) {
+	// No update on making one, seeing a source from boost.org, might be more original soon
+}
+
 int factors(int n) {
 	std::vector<int> factors = {};
 	for (int i = 1; i <= n; i++) {
@@ -79,7 +84,7 @@ int factorial(int start) {
 	return factoral;
 }
 
-int sum_series(int n, int i, std::function<int(double)> func) {
+int summation_series(int n, int i, std::function<int(double)> func) {
 	int start = i;
 	for (start; start<=n; start++) {
 		return func(i);
