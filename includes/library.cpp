@@ -59,7 +59,12 @@ int cubic_equation(int x) {
 
 int quadratic_formula(int a, int b, int c) {
 	if (a,b,c > 0) {
-		return -b+std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
+		int pos = -b+std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
+		int neg = -b-std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
+
+		return pos, neg;
+	} else {
+		return 0;
 	}
 }
 
