@@ -25,6 +25,8 @@ int derivative(int x, std::function<int(double)> Function);
 
 int limit(int x, std::function<int(double)> Function);
 
+int Lhopital(int approach, std::function<int(double)> Function_One, std::function<int(double)> Function_Two);
+
 int integral(int lower, int upper, std::function<int(double)> Function);
 
 

@@ -98,6 +98,14 @@ int limit(int x, std::function<int(double)> Function)
 	return (Function(x+1e-13)*10^12)/10^12;
 }
 
+int Lhopital(int approach, std::function<int(double)> Function_One, std::function<int(double)> Function_Two)
+{
+	int prime_one = (Function_One(approach+1e-12)-Function_One(approach))/1e-12;
+	int prime_two = (Function_Two(approach+1e-12)-Function_Two(approach))/1e-12;
+	int func = prime_one/prime_two;
+	return (func);
+}
+
 int integral(int lower, int upper, std::function<int(double)> Function)
 {
 	int s = 0;
