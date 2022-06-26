@@ -95,7 +95,7 @@ int derivative(int x, std::function<int(double)> Function)
 
 int limit(int x, std::function<int(double)> Function)
 {
-	return std::floor(Function(x+1e-13)*10^12)/10^12;
+	return (Function(x+1e-13)*10^12)/10^12;
 }
 
 int integral(int lower, int upper, std::function<int(double)> Function)
