@@ -10,6 +10,7 @@
 #include <any>
 #include <vector>
 #include <functional>
+#include <cmath>
 
 template <typename T>
 T duplicate(T x, T y) {
@@ -52,6 +53,10 @@ int quadratic_formula(int a, int b, int c) {
 	}
 }
 
+int vertex_of_a_function(int a, int b, int c) {
+	return -b/(2*a), -b^2/(4*a) + c;
+}
+
 int factorial(int start) {
 	int n = start;
 	long double factoral = 1.0;
@@ -63,11 +68,24 @@ int factorial(int start) {
 	return factoral;
 }
 
-int summation(int n, int i, std::function<int(double)> func) {
-	int start = i;
-	for (start; start<=n; start++) {
-		return func(i);
-	}
+int summation(int start, int end, std::function<int(double)> Function) {
+	int sum = 0;
+	for (int i = start; i < end; i++)
+	{
+		sum += Function(i);
+	};
+	
+	return sum;
+}
+
+int product(int start, int end, std::function<int(double)> Function) {
+	int sum = 0;
+	for (int i = start; i < end; i++)
+	{
+		sum *= Function(i);
+	};
+	
+	return sum;
 }
 
 int derivative(int x, std::function<int(double)> Function)
