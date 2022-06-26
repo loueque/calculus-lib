@@ -23,27 +23,6 @@ T loop_return_print(T array[6]) {
 	}
 }
 
-namespace Funcs {
-	class Functions {
-		public:
-			static double OneDivX(double x) {
-				return 1/x;
-			};
-
-			static double XDivX(double x) {
-				return x/x;
-			}
-
-			static double OneDivXPow(double x) {
-				return 1/std::pow(x, 2);
-			}
-
-			static double XDivTimes2(double x) {
-				return x/x+2;
-			}
-	};
-};
-
 template<typename value_t, typename func_t>
 inline value_t integration_func(const value_t a, const value_t b, const value_t t, func_t func) {
 	// No update on making one, seeing a source from boost.org, might be more original soon
@@ -59,13 +38,13 @@ int factors(int n) {
 }
 
 int cubic_equation(int x) {
-	return std::pow(x, 3);
+	return pow(x, 3);
 };
 
 int quadratic_formula(int a, int b, int c) {
 	if (a,b,c > 0) {
-		int pos = -b+std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
-		int neg = -b-std::sqrt(std::pow(b,2)-4*(a*c))/2*a;
+		int pos = -b+sqrt(pow(b,2)-4*(a*c))/2*a;
+		int neg = -b-sqrt(pow(b,2)-4*(a*c))/2*a;
 
 		return pos, neg;
 	} else {
@@ -84,32 +63,43 @@ int factorial(int start) {
 	return factoral;
 }
 
-int summation_series(int n, int i, std::function<int(double)> func) {
+int summation(int n, int i, std::function<int(double)> func) {
 	int start = i;
 	for (start; start<=n; start++) {
 		return func(i);
 	}
 }
 
-double getValueAt(double x, const std::vector<double> &coeffs) {
-    double total = 0;
-
-    double xToTheI = 1;
-    for (unsigned i = 0; i < coeffs.size(); i++) {
-
-        total += coeffs[i] * xToTheI;
-
-        xToTheI *= x;
-    }
-    return total;
+int derivative(int x, std::function<int(double)> Function)
+{
+	return (Function(x+1e-12)-Function(x))/1e-12;
 }
 
-class Calculus {
-	public:
+int limit(int x, std::function<int(double)> Function)
+{
+	return std::floor(Function(x+1e-13)*10^12)/10^12;
+}
 
-	private:
+int integral(int lower, int upper, std::function<int(double)> Function)
+{
+	int s = 0;
+	bool n = false;
 
-	protected:
-};
+	if (s < 0) {
+		n = true;
+		upper = abs(upper);
+	};
+
+	for (int i = lower; upper; 1e-5)
+	{
+		s += Function(i)*1e-5;
+	}
+
+	if (n) {
+		return -s;
+	} else {
+		return s;
+	}
+}
 
 #endif
