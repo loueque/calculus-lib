@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <cmath>
-#include <includes/library.h>
+#include <calculus-lib/include/calculus_lib.h>
 
 int func_1(int x)
 {
