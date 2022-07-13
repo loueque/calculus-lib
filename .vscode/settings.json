@@ -77,6 +77,11 @@
 		"string_view": "cpp",
 		"variant": "cpp",
 		"__functional_base": "cpp",
-		"algorithm": "cpp"
+		"algorithm": "cpp",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"map": "cpp",
+		"random": "cpp",
+		"xtree": "cpp"
 	}
 }

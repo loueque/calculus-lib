@@ -24,11 +24,6 @@ T loop_return_print(T array[6]) {
 	}
 }
 
-template<typename value_t, typename func_t>
-inline value_t integration_func(const value_t a, const value_t b, const value_t t, func_t func) {
-	// No update on making one, seeing a source from boost.org, might be more original soon
-}
-
 int factors(int n) {
 	std::vector<int> factors = {};
 	for (int i = 1; i <= n; i++) {
@@ -64,11 +59,14 @@ int factorial(int start) {
 		for(int i = 1; i <= start; i++) {
 			factoral = start * i;
 		}
+
+		return factoral;
+	} else {
+		return 1;
 	}
-	return factoral;
 }
 
-int summation(int start, int end, std::function<int(double)> Function) {
+int summation(int start, int end, std::function<int(int)> Function) {
 	int sum = 0;
 	for (int i = start; i < end; i++)
 	{
@@ -78,7 +76,7 @@ int summation(int start, int end, std::function<int(double)> Function) {
 	return sum;
 }
 
-int product(int start, int end, std::function<int(double)> Function) {
+int product(int start, int end, std::function<int(int)> Function) {
 	int sum = 0;
 	for (int i = start; i < end; i++)
 	{
@@ -88,17 +86,17 @@ int product(int start, int end, std::function<int(double)> Function) {
 	return sum;
 }
 
-int derivative(int x, std::function<int(double)> Function)
+int derivative(int x, std::function<int(int)> Function)
 {
 	return (Function(x+1e-12)-Function(x))/1e-12;
 }
 
-int limit(int x, std::function<int(double)> Function)
+int limit(int x, std::function<int(int)> Function)
 {
 	return (Function(x+1e-13)*10^12)/10^12;
 }
 
-int Lhopital(int approach, std::function<int(double)> Function_One, std::function<int(double)> Function_Two)
+int Lhopital(int approach, std::function<int(int)> Function_One, std::function<int(int)> Function_Two)
 {
 	int prime_one = (Function_One(approach+1e-12)-Function_One(approach))/1e-12;
 	int prime_two = (Function_Two(approach+1e-12)-Function_Two(approach))/1e-12;
@@ -106,7 +104,7 @@ int Lhopital(int approach, std::function<int(double)> Function_One, std::functio
 	return (func);
 }
 
-int integral(int lower, int upper, std::function<int(double)> Function)
+int integral(int lower, int upper, std::function<int(int)> Function)
 {
 	int s = 0;
 	bool n = false;

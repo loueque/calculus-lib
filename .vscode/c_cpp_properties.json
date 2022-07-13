@@ -3,7 +3,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "-I${workspaceFolder}/**",
+                "C:/Users/pama_/OneDrive/Documents/GitHub",
+                "${workspaceFolder}"
             ],
             "defines": [
                 "_DEBUG",
