@@ -5,4 +5,4 @@ A library that revolves around the center of the basics of calculus (Calculus I,
 * Integral (surface, for now)...
 * L'Hopital rule
 
-Still a progressing repository.
+There will be future methods and functions such as infinite series, infinite limits, parametric equations and possibly multivariable calculus in ~4-5 months.
