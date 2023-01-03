@@ -104,6 +104,26 @@ int Lhopital(int approach, std::function<int(int)> Function_One, std::function<i
 	return (func);
 }
 
+int rectangleIntegralFormula(int start, int end, std::function<int(int)> Function)
+{
+	int summation(); {
+		int sum = 0;
+		for (int i = start; i < end; i++)
+		{
+			sum += Function(i);
+		};
+		
+		return sum;
+	}
+
+	int change();
+	{
+		return start/end;
+	}
+
+	return (summation() * change());
+}
+
 int integral(int lower, int upper, std::function<int(int)> Function)
 {
 	int s = 0;
